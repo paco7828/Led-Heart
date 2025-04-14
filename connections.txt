@@ -1,0 +1,38 @@
+LED1:
+    anode --> PB3 + LED2 cathode + LED3 cathode
+    cathode --> PB4 + LED2 anode + LED7 cathode
+
+LED3:
+    anode --> PB2 + LED4 cathode
+    cathode --> LED4 anode + LED9 cathode
+
+LED4:
+    cathode --> LED6 anode
+
+LED5:
+    anode --> LED6 cathode + LED9 anode
+    cathode --> LED7 anode + LED6 anode
+
+LED6:
+    cathode --> PB1
+
+LED7:
+    anode --> LED8 cathode
+    cathode --> LED8 anode + LED11 cathode
+
+LED9:
+    anode --> LED10 cathode
+    cathode --> LED10 anode
+
+LED10:
+    cathode --> LED12 cathode
+
+LED11:
+    anode --> LED12 cathode
+    cathode --> LED12 anode
+
+Button:
+    A terminal --> ATTINY VCC
+    B terminal --> Battery VCC
+
+Battery GND --> ATTINY GND
