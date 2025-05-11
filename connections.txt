@@ -1,13 +1,6 @@
 LED1:
-    anode --> PB3 + LED2 cathode + LED3 cathode
-    cathode --> PB4 + LED2 anode + LED7 cathode
-
-LED3:
-    anode --> PB2 + LED4 cathode
-    cathode --> LED4 anode + LED9 cathode
-
-LED4:
-    cathode --> LED6 anode
+    anode --> PB3
+    cathode --> PB4 + LED7 cathode
 
 LED5:
     anode --> LED6 cathode + LED9 anode
