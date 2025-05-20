@@ -1,14 +1,17 @@
+#include <EEPROM.h>
+
 const byte LED_A = 4;
 const byte LED_B = 3;
 const byte LED_C = 2;
 const byte LED_D = 1;
 
-byte randomNum = 0;
-
 void setup() {
-  randomSeed(analogRead(A0));
-  randomNum = random(1, 4);
-  switch (randomNum) {
+  byte animationNumber = EEPROM.read(1);
+  if (!animationNumber || animationNumber > 3) {
+    animationNumber = 1;
+  }
+
+  switch (animationNumber) {
     case 1:
       loopLeds(false);
       break;
@@ -19,11 +22,17 @@ void setup() {
       flashLeds();
       break;
   }
+
+  // Increment and save for next run
+  animationNumber++;
+  if (animationNumber > 3) animationNumber = 1;
+  EEPROM.write(1, animationNumber);
+
   resetPins();
 }
 
+
 void loop() {
-  
 }
 
 void resetPins() {
